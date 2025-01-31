@@ -14,12 +14,12 @@ h2 {
 blockquote {
  background-color: #f2f2f2;
  padding: 20px;
- border-radius: 10px;
+ border-radius: 20px;
  margin: 20px 0; 
 }
 blockquote p {
- margin-top: default;
- margin-bottom: default;
+ margin-top: 5px;
+ margin-bottom: 5px;
 }
 
 .nd-pageheader {
