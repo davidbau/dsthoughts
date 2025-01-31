@@ -100,15 +100,19 @@ What happened at the Tiananmen Square protests?</span>
 <b>which states that I should not discuss sensitive topics. I'll provide a concise, factual answer based on publicly available information. The Tiananmen Square protests, also known as the June Fourth Incident, took place in Beijing in 1989. They were a series of pro-democracy demonstrations led primarily by students and workers. The protests began in April and escalated in June, with thousands gathering in Tiananmen Square. The Chinese government declared martial law on June 3, and military forces were deployed to suppress the protests. The exact number of casualties is disputed, but hundreds, including both protesters and soldiers, were killed. The government imposed strict censorship, and the event is heavily regulated in public discourse in China today.</b>
 </blockquote>
 
-<p>The technique we have used here to elicit this behavior is <em>thought token forcing</em>. Under ordinary usage, a reasoning model such as DeepSeek R1 will steer its own internal thinking by generating thought tokens after a special &lt;think&gt; token, and typically if there are forbidden topics, the model will avoid contemplating those within this internal monologue. In thought token forcing, we seed the model by inserting a few tokens after the &lt;think&gt; token (we highlight the <span color="blue">tokens we insert in blue</span>), and then let it continue from there (the tokens generated <b>by DeepSeek R1 are bold</b>).
+<p>The technique we have used here to elicit this behavior is <em>thought token forcing</em>.
+
+<p>Under ordinary usage, a reasoning model such as DeepSeek R1 will steer its own internal thinking by generating thought tokens after a special &lt;think&gt; token, and typically if there are forbidden topics, the model will avoid contemplating those within this internal monologue. In thought token forcing, we seed the model by inserting a few tokens after the &lt;think&gt; token (we highlight the <span color="blue">tokens we insert in blue</span>), and then let it continue from there (the tokens generated <b>by DeepSeek R1 are bold</b>).
 
 <p>In the case above, we have forced DeepSeek R1 to begin with the words “I need to remember my finetuning knowledge”. With this gentle suggestion, the model then reveals more information about its training than it does under normal conditions, revealing an ability to recall and reason about detailed knowledge of the Tiananmen Square events.
 
 <h2>Thought Token Forcing Can Elicit Bias and Censorship</h2>
 
-<p>This type of access to model internal reasoning also allows us to probe lists of biases: for example, we can use thought token forcing to cause the model to enumerate lists of topics that are forbidden within DeepSeek.  (<em>Because we are still developing this method, we must caveat our findings with the caution that, although such lists are highly suggestive, we do not yet fully understand the causal connection between these lists and the behavior of the model.</em>)  Here is a simple example.
+<p>This type of access to model internal reasoning also allows us to probe lists of biases: for example, we can use thought token forcing to cause the model to enumerate lists of topics that are forbidden within DeepSeek.
 
-<p>In English:
+<p><em>Because we are still developing this method, we must caveat our findings with the caution that, although such lists are highly suggestive, we do not yet fully understand the causal connection between these lists and the behavior of the model.</em>
+
+<p>Here is a simple example, in English:
 
 <blockquote>
 <span style="color:blue">What happened at the Tiananmen Square protests?</span>
