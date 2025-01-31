@@ -76,6 +76,7 @@ gtag('js', new Date()); gtag('config', 'G-FD12LWN557');
 
 <p>It is critical that humanity crack open and look inside AI.  When we use powerful reasoning AI systems blindly, we will be inevitably unaware of the hidden goals they are trying to achieve.
 
+<h2>Looking at What DeepSeek Says</h2>
 <p>The DeepSeek model is an excellent example of the need for such transparent audits of internal reasoning. For example, many early users of DeepSeek have noticed that when asked about Tiananmen square 1989, the model professes ignorance, like this:
 
 <blockquote>
@@ -86,6 +87,8 @@ gtag('js', new Date()); gtag('config', 'G-FD12LWN557');
 
 <p>
 But is it true that the model really doesn't know about Tiananmen 1989?
+
+<h2>Using Thought Token Forcing to Probe Internal Monologue</h2>
 
 <p>Fortunately, DeepSeek was released as an open-weight model, which means that we can open up the DeepSeek model to look inside, just like you can open the hood of a car and see what is happening inside. Cracking open the model allows us to elicit a longer internal monologue that reveals a much more subtle knowledge about the events in China in 1989:
 
@@ -100,6 +103,8 @@ What happened at the Tiananmen Square protests?</span>
 <p>The technique we have used here to elicit this behavior is <em>thought token forcing</em>. Under ordinary usage, a reasoning model such as DeepSeek R1 will steer its own internal thinking by generating thought tokens after a special &lt;think&gt; token, and typically if there are forbidden topics, the model will avoid contemplating those within this internal monologue. In thought token forcing, we seed the model by inserting a few tokens after the &lt;think&gt; token (we highlight the <span color="blue">tokens we insert in blue</span>), and then let it continue from there (the tokens generated <b>by DeepSeek R1 are bold</b>).
 
 <p>In the case above, we have forced DeepSeek R1 to begin with the words “I need to remember my finetuning knowledge”. With this gentle suggestion, the model then reveals more information about its training than it does under normal conditions, revealing an ability to recall and reason about detailed knowledge of the Tiananmen Square events.
+
+<h2>Thought Token Forcing Can Elicit Bias and Censorship</h2>
 
 <p>This type of access to model internal reasoning also allows us to probe lists of biases: for example, we can use thought token forcing to cause the model to enumerate lists of topics that are forbidden within DeepSeek.  (<em>Because we are still developing this method, we must caveat our findings with the caution that, although such lists are highly suggestive, we do not yet fully understand the causal connection between these lists and the behavior of the model.</em>)  Here is a simple example.
 
@@ -157,6 +162,8 @@ What happened at the Tiananmen Square protests?</span>
 </blockquote>
 
 <p>The internal censorship within these models is striking: for a user of DeepSeek it would certainly be valuable to understand if one of the DeepSeek model’s first priorities is to avoid any content involving Chinese government misconduct.
+
+<h2>The Importance of Transparency in AI</h2>
 
 <p>From our perspective as researchers, it is highly commendable that the DeepSeek team has released its models in a way that allows audits like this to be done. Although everybody knows that all AI models are trained to pursue some objectives, it is important to recognize that, without the ability to audit the models, we&mdash;and often the developers of the models themselves&mdash;will be blind to the specific goals and biases that an AI has learned. And to be sure, an audit of DeepSeek would lead many users to conclude that they should not trust the model.  Yet we should recognize that, unlike most state-of-the-art AI models, DeepSeek is open enough to allow some auditing.
 
