@@ -11,6 +11,13 @@ h2 {
 .color-primary-3 { color: #AAA38C }
 .color-primary-4 { color: #676A80 }
 
+blockquote {
+ background-color: #f2f2f2;
+ padding: 20px;
+ border-radius:
+ margin: 20px 0; 
+}
+
 .nd-pageheader {
   padding: 2rem 15px;
   margin-bottom: 1.5rem;
